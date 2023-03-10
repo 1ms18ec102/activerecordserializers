@@ -3,7 +3,7 @@ module V1
   
       def index
         employees = Employee.all.includes(:manager)  
-  // used includes method to prevent N-Query problem
+# used includes method to prevent N-Query problem
         
         render json: {
           data: ActiveModelSerializers::SerializableResource.new(employees, each_serializer: EmployeeSerializer),
